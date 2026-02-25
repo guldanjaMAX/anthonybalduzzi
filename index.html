@@ -348,12 +348,61 @@
         }
         .timeline-photo {
             margin-top: 1.25rem; overflow: hidden; max-height: 200px;
+            border-radius: 2px; cursor: pointer; position: relative;
         }
         .timeline-photo img {
             width: 100%; height: 200px; object-fit: cover;
             object-position: center 20%;
-            filter: brightness(0.8) saturate(1.1);
+            filter: brightness(0.85) saturate(1.1);
             border: 1px solid rgba(212, 135, 44, 0.1);
+            transition: filter 0.3s ease;
+        }
+        .timeline-photo:hover img {
+            filter: brightness(0.95) saturate(1.15);
+        }
+        .timeline-photo::after {
+            content: ''; position: absolute; inset: 0;
+            background: linear-gradient(to top, rgba(10,10,8,0.3) 0%, transparent 30%);
+            pointer-events: none; opacity: 1; transition: opacity 0.3s ease;
+        }
+        .timeline-photo:hover::after { opacity: 0; }
+
+        /* Portrait photos get taller containers to show the full story */
+        .timeline-photo--tall { max-height: 350px; }
+        .timeline-photo--tall img { height: 350px; }
+
+        /* Lightbox for full photo view */
+        .photo-lightbox {
+            display: none; position: fixed; inset: 0; z-index: 10000;
+            background: rgba(10, 10, 8, 0.95); backdrop-filter: blur(10px);
+            justify-content: center; align-items: center;
+            padding: 2rem; cursor: pointer;
+            animation: lightboxFadeIn 0.25s ease;
+        }
+        .photo-lightbox.active { display: flex; }
+        .photo-lightbox img {
+            max-width: 90vw; max-height: 85vh; object-fit: contain;
+            border: 1px solid rgba(212, 135, 44, 0.15);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+        }
+        .photo-lightbox-caption {
+            position: absolute; bottom: 1.5rem; left: 50%; transform: translateX(-50%);
+            font-family: var(--font-serif); font-size: 0.95rem; color: var(--color-ash);
+            font-weight: 300; letter-spacing: 0.02em; text-align: center;
+            pointer-events: none;
+        }
+        .photo-lightbox-close {
+            position: absolute; top: 1.5rem; right: 1.5rem;
+            color: var(--color-ash); font-size: 1.5rem; cursor: pointer;
+            width: 44px; height: 44px; display: flex; align-items: center;
+            justify-content: center; border-radius: 50%;
+            background: rgba(255,255,255,0.05); transition: all 0.2s ease;
+            border: none; font-family: inherit;
+        }
+        .photo-lightbox-close:hover { background: rgba(255,255,255,0.1); color: var(--color-white); }
+        @keyframes lightboxFadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
         /* ===== THE WORK ===== */
@@ -669,6 +718,8 @@
             .timeline::before { left: 0.25rem; }
             .timeline-dot { left: 0.25rem; }
             .timeline-content { max-width: 100%; }
+            .timeline-photo--tall { max-height: 300px; }
+            .timeline-photo--tall img { height: 300px; }
             .divider { height: 220px; }
             .river-divider { height: 280px; }
             .work-note { padding: 1.5rem; }
@@ -762,8 +813,8 @@
                         <div class="timeline-year">1996</div>
                         <h3 class="timeline-title">The First Fire</h3>
                         <p class="timeline-text">At nine years old, I watched cancer take my father. He was forty two. In that loss, a furnace was lit inside me. I made a vow I did not fully understand yet: I would learn how to heal. I would learn how to keep people alive.</p>
-                        <div class="timeline-photo">
-                            <img src="photos-web/duzzi-dad-family.jpg" alt="Young Anthony with his father and brother" loading="lazy" style="object-position: center 10%;">
+                        <div class="timeline-photo timeline-photo--tall">
+                            <img src="photos-web/duzzi-dad-family.jpg" alt="Young Anthony with his father and brother" loading="lazy" style="object-position: center 12%;" data-full="photos-web/duzzi-dad-family.jpg" data-caption="Anthony with his father and brother, before everything changed.">
                         </div>
                     </div>
                 </div>
@@ -774,7 +825,7 @@
                         <h3 class="timeline-title">The Body as Teacher</h3>
                         <p class="timeline-text">I turned my pain into physical discipline. Competitive bodybuilding taught me what it means to sculpt something from suffering, to use the body as a container for will. It was not the destination, but it was the training ground.</p>
                         <div class="timeline-photo">
-                            <img src="photos-web/duzzi-body-transformation.jpg" alt="Anthony's bodybuilding transformation from age 15 to competition stage" loading="lazy">
+                            <img src="photos-web/duzzi-body-transformation.jpg" alt="Anthony's bodybuilding transformation from age 15 to competition stage" loading="lazy" data-full="photos-web/duzzi-body-transformation.jpg" data-caption="From fifteen to the competition stage.">
                         </div>
                     </div>
                 </div>
@@ -785,7 +836,7 @@
                         <h3 class="timeline-title">Fit Father Project</h3>
                         <p class="timeline-text">What began as a mission became a movement. Fit Father Project and later Fit Mother Project grew into companies serving tens of thousands of families. The wide circle was expanding. I was helping men reclaim their vitality, their energy, their lives.</p>
                         <div class="timeline-photo">
-                            <img src="photos-web/duzzi-ffp-group-close.jpg" alt="Anthony with Fit Father Project members celebrating together" loading="lazy" style="object-position: center 15%;">
+                            <img src="photos-web/duzzi-ffp-group-close.jpg" alt="Anthony with Fit Father Project members celebrating together" loading="lazy" style="object-position: center 15%;" data-full="photos-web/duzzi-ffp-group-close.jpg" data-caption="The Fit Father Project movement.">
                         </div>
                     </div>
                 </div>
@@ -795,11 +846,11 @@
                         <div class="timeline-year">2017</div>
                         <h3 class="timeline-title">The Tree</h3>
                         <p class="timeline-text">I ignored an intuition to slow down on a ski slope and slammed into a tree at full speed. Shattered leg. Broken arm. Nearly died. Seven surgeries over the next decade, including a leg lengthening procedure. In the wreckage, something clarified. The body is not the whole story. There is something deeper holding us together that no surgeon's hand can reach.</p>
-                        <div class="timeline-photo">
-                            <img src="photos-web/duzzi-ski-rescue.jpg" alt="Anthony being rescued on a sled after his skiing accident" loading="lazy" style="object-position: center 30%;">
+                        <div class="timeline-photo timeline-photo--tall">
+                            <img src="photos-web/duzzi-ski-rescue.jpg" alt="Anthony being rescued on a sled after his skiing accident" loading="lazy" style="object-position: center 25%;" data-full="photos-web/duzzi-ski-rescue.jpg" data-caption="The moment everything changed on the mountain.">
                         </div>
-                        <div class="timeline-photo" style="margin-top: 1.5rem;">
-                            <img src="photos-web/duzzi-recovery-strength.jpg" alt="Anthony training through recovery in medical scrubs with a leg brace" loading="lazy" style="object-position: center 15%;">
+                        <div class="timeline-photo timeline-photo--tall" style="margin-top: 1.5rem;">
+                            <img src="photos-web/duzzi-recovery-strength-timeline.jpg" alt="Anthony training through recovery in medical scrubs with a leg brace" loading="lazy" style="object-position: center 20%;" data-full="photos-web/duzzi-recovery-strength.jpg" data-caption="Scrubs, dumbbells, leg brace, crutches. Recovery through strength.">
                         </div>
                     </div>
                 </div>
@@ -809,8 +860,8 @@
                         <div class="timeline-year">2019</div>
                         <h3 class="timeline-title">The Amazon</h3>
                         <p class="timeline-text">A plant medicine journey in the Amazon opened a door I did not know existed. In the jungle, with the fire and the medicine and the silence, I met parts of myself I had been running from my whole life. I sat in total darkness for a week. I stopped running. I found a direct, personal, felt communion with God that was mine alone.</p>
-                        <div class="timeline-photo">
-                            <img src="photos-web/duzzi-amazon-ceremony.jpg" alt="Anthony with an indigenous guide during ceremony in the Amazon" loading="lazy" style="object-position: center 15%;">
+                        <div class="timeline-photo timeline-photo--tall">
+                            <img src="photos-web/duzzi-amazon-ceremony.jpg" alt="Anthony with an indigenous guide during ceremony in the Amazon" loading="lazy" style="object-position: center 10%;" data-full="photos-web/duzzi-amazon-ceremony.jpg" data-caption="With an indigenous guide in the Amazon. The door that opened everything.">
                         </div>
                     </div>
                 </div>
@@ -821,13 +872,20 @@
                         <h3 class="timeline-title">The Inner Circle</h3>
                         <p class="timeline-text">The wide circle still turns. Fit Father and Fit Mother continue to serve. But the innermost circle is opening. Sacred, slow, one man at a time. I am being called to bring other men to the center I have found. This is the work I was built for. The work that requires all of me.</p>
                         <div class="timeline-photo">
-                            <img src="photos-web/duzzi-sunset-rock.jpg" alt="Anthony sitting on a rock at sunset, overlooking the horizon" loading="lazy">
+                            <img src="photos-web/duzzi-sunset-rock.jpg" alt="Anthony sitting on a rock at sunset, overlooking the horizon" loading="lazy" data-full="photos-web/duzzi-sunset-rock.jpg" data-caption="Sedona. The center, found.">
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Photo Lightbox -->
+    <div class="photo-lightbox" id="photoLightbox" role="dialog" aria-label="Photo viewer">
+        <button class="photo-lightbox-close" aria-label="Close photo viewer">&times;</button>
+        <img src="" alt="" id="lightboxImg">
+        <div class="photo-lightbox-caption" id="lightboxCaption"></div>
+    </div>
 
     <!-- ===== COAL DIVIDER ===== -->
     <div class="divider" role="presentation">
@@ -1162,6 +1220,30 @@
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) target.scrollIntoView({ behavior: 'smooth' });
             });
+        });
+
+        /* Photo lightbox */
+        const lightbox = document.getElementById('photoLightbox');
+        const lightboxImg = document.getElementById('lightboxImg');
+        const lightboxCaption = document.getElementById('lightboxCaption');
+        document.querySelectorAll('.timeline-photo img[data-full]').forEach(img => {
+            img.parentElement.addEventListener('click', () => {
+                lightboxImg.src = img.dataset.full;
+                lightboxImg.alt = img.alt;
+                lightboxCaption.textContent = img.dataset.caption || '';
+                lightbox.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox || e.target.classList.contains('photo-lightbox-close')) closeLightbox();
+        });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && lightbox.classList.contains('active')) closeLightbox();
         });
     </script>
 
