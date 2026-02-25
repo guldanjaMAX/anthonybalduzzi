@@ -457,32 +457,6 @@
             color: var(--color-smoke); line-height: 1.9;
         }
         .avatar-col p + p { margin-top: 1.25rem; }
-        .avatar-col.not-for h3 { color: var(--color-ash); }
-        .avatar-col.not-for p { color: var(--color-ash); }
-
-        /* ===== TRANSFORMATION ===== */
-        .transformation { background: var(--color-bg); position: relative; overflow: hidden; }
-        .transform-grid {
-            display: grid; grid-template-columns: 1fr auto 1fr;
-            gap: 3rem; margin-top: 3rem; align-items: start;
-        }
-        .transform-col h3 {
-            font-family: var(--font-serif); font-size: 1.5rem;
-            font-weight: 400; margin-bottom: 1.5rem;
-        }
-        .transform-col p {
-            font-size: 1rem; font-weight: 300; line-height: 2; color: var(--color-smoke);
-        }
-        .transform-col p + p { margin-top: 0.75rem; }
-        .transform-from h3 { color: var(--color-ash); }
-        .transform-from p { color: var(--color-ash); }
-        .transform-to h3 { color: var(--color-ember-light); }
-        .transform-arrow {
-            font-family: var(--font-serif); font-size: 3rem;
-            color: var(--color-ember); padding-top: 2rem;
-            opacity: 0.6;
-        }
-
         /* ===== PROMISES ===== */
         .promises { background: var(--color-bg-secondary); position: relative; overflow: hidden; }
         .promises-bg {
@@ -501,30 +475,6 @@
         }
         .promise-item p span {
             color: var(--color-ember-light);
-        }
-
-        /* ===== TESTIMONIALS ===== */
-        .testimonials { position: relative; overflow: hidden; }
-        .testimonials-bg {
-            position: absolute; inset: 0;
-            background: url('GeneratedImagesForSite/Gemini_Generated_Image_785fx5785fx5785f.jpg') center center / cover no-repeat;
-            opacity: 0.1;
-        }
-        .testimonial-grid {
-            display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 3rem;
-        }
-        .testimonial-card {
-            padding: 2.5rem; border: 1px solid rgba(212, 135, 44, 0.08);
-            background: rgba(17, 17, 16, 0.7);
-        }
-        .testimonial-text {
-            font-family: var(--font-serif); font-size: 1.15rem;
-            font-weight: 300; font-style: italic; color: var(--color-smoke);
-            line-height: 1.8; margin-bottom: 1.5rem;
-        }
-        .testimonial-author {
-            font-size: 0.8rem; letter-spacing: 0.1em;
-            text-transform: uppercase; color: var(--color-ember);
         }
 
         /* ===== LETTERS FROM THE FIRE ===== */
@@ -667,8 +617,6 @@
         @media (max-width: 1024px) {
             .about-grid, .letters-grid, .apply-grid { grid-template-columns: 1fr; gap: 3rem; }
             .avatar-grid { grid-template-columns: 1fr; gap: 3rem; }
-            .transform-grid { grid-template-columns: 1fr; gap: 2rem; }
-            .transform-arrow { display: none; }
             .hero-content { padding: 0 2rem; }
             .hero-portrait { width: 60%; opacity: 0.6; }
             .timeline::before { left: 2rem; }
@@ -707,8 +655,6 @@
             .section-body { font-size: 1rem; }
             .phase { grid-template-columns: 50px 1fr; gap: 1.25rem; }
             .phase-number { font-size: 2rem; }
-            .testimonial-grid { grid-template-columns: 1fr; gap: 2rem; }
-            .testimonial-card { padding: 2rem 1.5rem; }
             .letters-grid { gap: 2.5rem; }
             .email-form { flex-direction: column; max-width: 100%; }
             .email-form input { border-right: 1px solid rgba(212, 135, 44, 0.2); }
@@ -764,12 +710,13 @@
         <div class="hero-content">
             <p class="hero-eyebrow">Doctor &middot; Guide &middot; Seeker</p>
             <h1 class="hero-title">Wake up.</h1>
-            <p class="hero-subtitle">You are so much more than the way you've been living.<br>God is calling you home to your center. Come feel this.</p>
+            <p class="hero-subtitle">You built the life. You carried the weight. You did what was expected.<br>And still, something essential is missing. You already feel it.</p>
             <a href="#apply" class="hero-cta">Begin the Conversation</a>
         </div>
         <div class="hero-scroll" aria-hidden="true"><span></span></div>
     </header>
 
+    <main>
     <!-- ===== ABOUT ===== -->
     <section class="section about" id="about" aria-labelledby="about-title">
         <div class="section-container">
@@ -778,13 +725,11 @@
                     <img src="photos-web/duzzi-amazon-walk.jpg" alt="Dr. Anthony Balduzzi walking through the Amazon jungle" loading="lazy" width="1280" height="1920">
                 </div>
                 <div class="fade-in">
-                    <p class="section-eyebrow">Who I Am</p>
-                    <h2 class="section-title" id="about-title">I am the mass and I am the fire beneath it.</h2>
+                    <p class="section-eyebrow">You Already Feel It</p>
+                    <h2 class="section-title" id="about-title">You have succeeded at everything except the thing that matters most.</h2>
                     <div class="section-body">
-                        <p>I lost my father to cancer when I was nine years old. He was forty two. That loss became the furnace that forged everything I have built since. It put me on a path of medicine, of understanding the body, of trying to save the lives that could not be saved in my own home.</p>
-                        <p>I became a naturopathic doctor. I built health companies that have helped tens of thousands of men and women reclaim their vitality. For over fourteen years, Fit Father Project and Fit Mother Project have been my life's work in the wide circle, the work of scale, of community, of reaching as many people as possible.</p>
-                        <p>But there has always been a deeper current running beneath the surface. In my late twenties, I ignored an intuition to slow down on a ski slope and slammed into a tree at full speed. Shattered leg. Broken arm. Nearly died. What followed was a decade of reconstruction: seven surgeries, including a leg lengthening procedure, and a parallel spiritual awakening. I went to the Amazon and drank ayahuasca. I sat in total darkness for a week. I found what I had been searching for since I was nine: a direct, unshakable connection to God.</p>
-                        <p>I became a father to my daughter Brooke. I went through a divorce. I rebuilt again. And through all of it, the through line became clear: every breaking was an opening, and every opening brought me closer to center. I am not just a doctor. I am a follower of Yeshua. A man who has been broken and rebuilt more times than most people would believe. And now, I am being called to work with men at the deepest level I know how to reach.</p>
+                        <p>You have built something real. The career, the family, the discipline. People look at your life and see a man who has it together. But you know the truth. There is a quiet ache beneath the surface that no amount of achievement can touch. A wildness inside you that has gone tame. A connection to God that you sense is real but cannot seem to reach on your own. You are not broken. You are caged. And some part of you already knows it.</p>
+                        <p>I know because I have lived every part of that sentence. I lost my father at nine. I nearly died on a ski slope. I have been through seven surgeries, a divorce, a decade of rebuilding, and a spiritual awakening in the Amazon that changed everything. I am a naturopathic doctor who built companies serving tens of thousands of families. But the work that changed my life was not the wide circle. It was the inner one. And that is the work I now do with men like you.</p>
                     </div>
                 </div>
             </div>
@@ -796,7 +741,7 @@
         <img src="GeneratedImagesForSite/embers.jpg" alt="" loading="lazy" width="1536" height="1024">
         <div class="divider-overlay"></div>
         <div class="divider-quote">
-            <blockquote>Every breaking was an opening. Every opening brought me closer to center.</blockquote>
+            <blockquote>What if the ache you have been carrying is not a wound, but an invitation?</blockquote>
         </div>
     </div>
 
@@ -804,8 +749,8 @@
     <section class="section journey" id="journey" aria-labelledby="journey-title">
         <div class="journey-bg" role="presentation"></div>
         <div class="section-container" style="position: relative; z-index: 1;">
-            <p class="section-eyebrow fade-in">The Path</p>
-            <h2 class="section-title fade-in" id="journey-title">Forged by loss. Rebuilt by fire.</h2>
+            <p class="section-eyebrow fade-in">Why I Can Guide You</p>
+            <h2 class="section-title fade-in" id="journey-title">I am not speaking from theory. I am speaking from scars.</h2>
             <div class="timeline" role="list">
                 <div class="timeline-item fade-in" role="listitem">
                     <div class="timeline-dot" aria-hidden="true"></div>
@@ -892,7 +837,7 @@
         <img src="GeneratedImagesForSite/Gemini_Generated_Image_ehaeohehaeohehae.jpg" alt="" loading="lazy" width="1919" height="1047">
         <div class="divider-overlay"></div>
         <div class="divider-quote">
-            <blockquote>I am not speaking from theory. I am speaking from scars.</blockquote>
+            <blockquote>The cage you built is not who you are. The fire inside you is.</blockquote>
         </div>
     </div>
 
@@ -903,7 +848,7 @@
             <p class="section-eyebrow fade-in">The Work</p>
             <h2 class="section-title fade-in" id="work-title">This is not coaching. This is fire.</h2>
             <div class="section-body fade-in">
-                <p>I work with men who have already succeeded by the world's standards and are dying of tameness on the inside. Men who sense that something deeper is calling them but cannot name it. Men who are ready to stop performing and start living from the center of who they actually are. The work begins with an in person meeting. You come to me, or I come to you. From there, we undertake a deep exploration across five phases.</p>
+                <p>You do not need another program. You do not need more information. You need someone who has walked the path you are standing at the edge of and can walk it with you. This work begins with an in person meeting. You come to me, or I come to you. From there, we go deep together across five phases. Body, spirit, ceremony, life, and integration. Each one designed to bring you home to the man you actually are.</p>
             </div>
             <div class="work-phases">
                 <div class="phase fade-in">
@@ -945,54 +890,21 @@
         </div>
     </section>
 
-    <!-- ===== WHO THIS IS FOR ===== -->
+    <!-- ===== RECOGNITION ===== -->
     <section class="section avatar" id="avatar" aria-labelledby="avatar-title">
         <div class="section-container">
             <p class="section-eyebrow fade-in">Recognition</p>
             <h2 class="section-title fade-in" id="avatar-title">You already know if this is for you.</h2>
             <div class="avatar-grid">
                 <div class="avatar-col fade-in">
-                    <h3>This is for the man who...</h3>
-                    <p>Has built the life he was supposed to want and knows something essential is missing. Who feels a deeper, wilder call in his spirit that he has become tame against. The weight of responsibility and routine has boxed him in. His physical health is nowhere near where he wants it to be.</p>
-                    <p>He craves adventure but is stuck in a loop. He wants to be more connected with God but it has felt performative. He is escaping: doom scrolling, self medicating, maybe drinking too much, eating poorly. He feels the misalignment but does not have the tools or the guide to address it.</p>
-                    <p>He is not broken. He is caged. And he is ready to break out.</p>
+                    <h3>Where you are now</h3>
+                    <p>You have built the life you were supposed to want and you know something essential is missing. There is a deeper, wilder call in your spirit that you have gone tame against. The weight of responsibility and routine has boxed you in. Your physical health is not where you want it to be. You crave adventure but you are stuck in a loop.</p>
+                    <p>You want a real connection with God but everything you have tried feels performative. You are escaping: doom scrolling, self medicating, maybe drinking too much, eating poorly. You feel the misalignment in your bones. You are not broken. You are caged. And you are ready to break out.</p>
                 </div>
-                <div class="avatar-col not-for fade-in">
-                    <h3>This is not for the man who...</h3>
-                    <p>Is looking for optimization hacks, biohacking shortcuts, or performance coaching. Who is skeptical of or hostile to God, spirituality, or the sacred. Who is not open to plant medicine work. Who wants a guru to follow rather than doing his own deep work.</p>
-                    <p>Who is not ready to be radically honest with himself. Who wants to outsource his transformation to someone else. Who cannot commit the time, financial investment, and emotional availability this work demands.</p>
-                    <p>This is mentorship and spiritual guidance, not therapy. Not mainstream fitness. Not a weekend retreat. This is the full, sacred work of becoming who you actually are.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== TRANSFORMATION ===== -->
-    <section class="section transformation" aria-labelledby="transform-title">
-        <div class="section-container">
-            <p class="section-eyebrow fade-in">The Arc</p>
-            <h2 class="section-title fade-in" id="transform-title">The character transformation.</h2>
-            <div class="transform-grid">
-                <div class="transform-col transform-from fade-in">
-                    <h3>From</h3>
-                    <p>Tame. Numb. Disconnected from God.</p>
-                    <p>Physically stagnant. Spiritually performative.</p>
-                    <p>Relationship tension. Routine bound.</p>
-                    <p>Doom scrolling. Self medicating.</p>
-                    <p>Quietly suffocating behind a successful exterior.</p>
-                    <p>Running from a pain he cannot name.</p>
-                    <p>Caged by the life he built.</p>
-                </div>
-                <div class="transform-arrow fade-in" aria-hidden="true">&rarr;</div>
-                <div class="transform-col transform-to fade-in">
-                    <h3>To</h3>
-                    <p>Fully alive. Centered in his power.</p>
-                    <p>Connected to God directly. His own knowing.</p>
-                    <p>Physically strong, aligned, vibrant.</p>
-                    <p>Relationships mending, deepening, honest.</p>
-                    <p>Planning and living adventures.</p>
-                    <p>Leading his family and mission from center.</p>
-                    <p>A knowing man on the high path.</p>
+                <div class="avatar-col fade-in">
+                    <h3>Where this takes you</h3>
+                    <p>Fully alive. Centered in your power. Connected to God directly, through your own knowing, not someone else's script. Physically strong, aligned, vibrant. Your relationships mending, deepening, becoming honest. Planning and living adventures again. Leading your family and your mission from center.</p>
+                    <p>This is not optimization. Not biohacking. Not a weekend retreat. This is the sacred, full spectrum work of becoming who you actually are. It requires radical honesty, time, emotional availability, and openness to plant medicine work. The men who are ready do not need to be convinced. They feel it.</p>
                 </div>
             </div>
         </div>
@@ -1003,64 +915,25 @@
         <div class="promises-bg" role="presentation"></div>
         <div class="section-container" style="position: relative; z-index: 1;">
             <p class="section-eyebrow fade-in">The Agreements</p>
-            <h2 class="section-title fade-in" id="promises-title">What I promise you.</h2>
+            <h2 class="section-title fade-in" id="promises-title">What you can expect from me.</h2>
             <div class="promise-list">
                 <div class="promise-item fade-in">
-                    <p><span>I promise</span> to meet you exactly where you are.</p>
+                    <p><span>You will be met</span> exactly where you are. No judgment. No performance required.</p>
                 </div>
                 <div class="promise-item fade-in">
-                    <p><span>I promise</span> to do this work together, beside you, not above you.</p>
+                    <p><span>You will have a guide beside you,</span> not above you. This is not guru work. This is two men in the fire together.</p>
                 </div>
                 <div class="promise-item fade-in">
-                    <p><span>I promise</span> to hold sacred, confidential space for whatever emerges.</p>
+                    <p><span>Your space will be sacred</span> and confidential. Whatever emerges stays between us.</p>
                 </div>
                 <div class="promise-item fade-in">
-                    <p><span>I promise</span> to bring the full weight of my life experience, my medical knowledge, my spiritual practice, and my presence to our work.</p>
+                    <p><span>You will receive the full weight</span> of everything I have learned: the medicine, the spiritual practice, the hard won lessons from my own breaking and rebuilding.</p>
                 </div>
                 <div class="promise-item fade-in">
-                    <p><span>I promise</span> to help you face and overcome your fears.</p>
+                    <p><span>You will leave with a system</span> that can serve you for life. Movements, nutrition, stillness, prayer, daily alignment.</p>
                 </div>
                 <div class="promise-item fade-in">
-                    <p><span>I promise</span> to help you achieve your optimal health and actualize your vision.</p>
-                </div>
-                <div class="promise-item fade-in">
-                    <p><span>I promise</span> to help you awaken your sacred connection to God.</p>
-                </div>
-                <div class="promise-item fade-in">
-                    <p><span>I promise</span> to help you heal, deepen, and clarify your most important relationships.</p>
-                </div>
-                <div class="promise-item fade-in">
-                    <p><span>I promise</span> to teach you a system that can serve you for life.</p>
-                </div>
-                <div class="promise-item fade-in">
-                    <p><span>I promise</span> that this work has an ending. I am not building dependency. I am transmitting what I know and sending you back into your life, transformed and free.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== TESTIMONIALS ===== -->
-    <section class="section testimonials" id="testimonials" aria-labelledby="testimonials-title">
-        <div class="testimonials-bg" role="presentation"></div>
-        <div class="section-container" style="position: relative; z-index: 1;">
-            <p class="section-eyebrow fade-in">What Men Say</p>
-            <h2 class="section-title fade-in" id="testimonials-title">Words from the fire.</h2>
-            <div class="testimonial-grid">
-                <div class="testimonial-card fade-in">
-                    <p class="testimonial-text">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip."</p>
-                    <p class="testimonial-author">J.M. &mdash; Entrepreneur, 42</p>
-                </div>
-                <div class="testimonial-card fade-in">
-                    <p class="testimonial-text">"Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia."</p>
-                    <p class="testimonial-author">R.K. &mdash; Executive, 38</p>
-                </div>
-                <div class="testimonial-card fade-in">
-                    <p class="testimonial-text">"Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis autem vel eum iure reprehenderit."</p>
-                    <p class="testimonial-author">T.S. &mdash; Physician, 47</p>
-                </div>
-                <div class="testimonial-card fade-in">
-                    <p class="testimonial-text">"Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt."</p>
-                    <p class="testimonial-author">M.D. &mdash; Founder, 51</p>
+                    <p><span>This work has an ending.</span> You will not need me forever. I transmit what I know and send you back into your life, transformed and free.</p>
                 </div>
             </div>
         </div>
@@ -1077,7 +950,7 @@
                     <p class="section-eyebrow">Stay Close</p>
                     <h2 class="section-title" id="letters-title">Letters from the Fire</h2>
                     <div class="section-body">
-                        <p>Reflections, stories, and hard won lessons from the path. Written by hand, from the fire. These are not newsletters. They are transmissions from the inner work: what I am learning, what I am burning, what I am building. For the men who feel the pull but are not ready to step in yet.</p>
+                        <p>If you feel the pull but are not ready to step in yet, start here. These are not newsletters. They are transmissions from the inner work: reflections, stories, and hard won lessons written from the fire. Something in these words may be the match that lights what is already waiting inside you.</p>
                     </div>
                     <form class="email-form" onsubmit="event.preventDefault();" aria-label="Subscribe to Letters from the Fire">
                         <label for="email-input" class="sr-only" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">Email address</label>
@@ -1103,11 +976,11 @@
         <div class="section-container">
             <div class="apply-grid">
                 <div class="fade-in">
-                    <p class="section-eyebrow">Step Forward</p>
+                    <p class="section-eyebrow">Your Move</p>
                     <h2 class="section-title" id="apply-title">Request a Conversation</h2>
                     <div class="section-body">
-                        <p>This is not an application in the traditional sense. There is no pitch on the other side. This is an invitation to sit across from me, tell me what is alive in you, and together we will discern if the fire between us is real. I take on very few men. The right ones know who they are.</p>
-                        <p style="margin-top: 1.5rem;">Fill out the form. Be honest. The men I work best with are the ones who stop performing before they even walk through the door.</p>
+                        <p>There is no pitch on the other side of this form. No sales call. Just a real conversation between two men to see if the fire between us is real. You will know within minutes whether this is your path.</p>
+                        <p style="margin-top: 1.5rem;">Be honest when you write. Drop the resume version of yourself. The work begins the moment you stop performing.</p>
                     </div>
                 </div>
                 <form class="apply-form fade-in" onsubmit="event.preventDefault();" aria-label="Request a conversation with Dr. Anthony Balduzzi">
@@ -1143,6 +1016,8 @@
             </div>
         </div>
     </section>
+
+    </main>
 
     <!-- ===== FOOTER ===== -->
     <footer class="footer" role="contentinfo">
