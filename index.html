@@ -23,3 +23,997 @@
     <meta property="og:image:height" content="630">
     <meta property="og:site_name" content="Dr. Anthony Balduzzi">
     <meta property="og:locale" content="en_US">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Dr. Anthony Balduzzi | Doctor, Guide, Seeker">
+    <meta name="twitter:description" content="In an age of acceleration, the deepest work is returning to what makes us human. Sacred, one-on-one mentorship for men ready to find their center.">
+    <meta name="twitter:image" content="https://anthonybalduzzi.com/og-image.jpg">
+    <meta name="twitter:site" content="@anthonybalduzzi">
+
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #1a1a1a;
+            --accent: #d4af37;
+            --light-bg: #f5f5f5;
+            --white: #ffffff;
+            --gray: #666666;
+            --dark-gray: #333333;
+            --text: #222222;
+        }
+
+        html, body {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Cormorant Garamond', serif;
+            color: var(--text);
+            background-color: var(--white);
+            line-height: 1.6;
+            font-size: 16px;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: var(--white);
+            border-bottom: 1px solid #e0e0e0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'EB Garamond', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text);
+            font-size: 1rem;
+            font-weight: 500;
+            font-family: 'Inter', sans-serif;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .cta-button {
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 0.95rem;
+        }
+
+        .cta-button:hover {
+            background-color: var(--accent);
+            color: var(--primary);
+        }
+
+        .cta-button.secondary {
+            background-color: transparent;
+            border: 2px solid var(--accent);
+            color: var(--accent);
+        }
+
+        .cta-button.secondary:hover {
+            background-color: var(--accent);
+            color: var(--primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+            color: var(--white);
+            padding: 6rem 2rem;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-family: 'EB Garamond', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            letter-spacing: -1px;
+        }
+
+        .hero p {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 300;
+        }
+
+        .hero .cta-button {
+            margin-right: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Section Spacing */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section {
+            padding: 4rem 0;
+        }
+
+        .section.light-bg {
+            background-color: var(--light-bg);
+        }
+
+        /* Section Headings */
+        h2 {
+            font-family: 'EB Garamond', serif;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        h3 {
+            font-family: 'EB Garamond', serif;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        p {
+            color: var(--gray);
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        /* About Section */
+        .about {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-image {
+            border-radius: 8px;
+            overflow: hidden;
+            height: 400px;
+            background-color: var(--light-bg);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-card h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            height: 60px;
+            display: flex;
+            align-items: center;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .testimonial {
+            background: var(--white);
+            padding: 2rem;
+            border-left: 4px solid var(--accent);
+            border-radius: 4px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .testimonial p {
+            font-style: italic;
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .testimonial-role {
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+            color: var(--white);
+            text-align: center;
+            padding: 4rem 2rem;
+            border-radius: 8px;
+        }
+
+        .cta-section h2 {
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-nav {
+            margin-bottom: 2rem;
+        }
+
+        .footer-nav a {
+            margin: 0 1rem;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+        }
+
+        .social-links {
+            margin-bottom: 1rem;
+        }
+
+        .social-links a {
+            display: inline-block;
+            margin: 0 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .footer-credit {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-top: 1rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .about {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                gap: 1.5rem;
+                font-size: 0.9rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .testimonials {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-button {
+                display: block;
+                width: 100%;
+                margin-bottom: 0.5rem;
+            }
+        }
+
+        /* Section Divider */
+        .divider {
+            height: 1px;
+            background: linear-gradient(to right, transparent, #d4af37, transparent);
+            margin: 2rem 0;
+        }
+
+        /* Image Gallery */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            height: 300px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90%;
+            position: relative;
+        }
+
+        .lightbox-content img {
+            max-width: 100%;
+            max-height: 100%;
+            border-radius: 8px;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--white);
+            border: none;
+            font-size: 2rem;
+            cursor: pointer;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease;
+        }
+
+        .lightbox-close:hover {
+            transform: rotate(90deg);
+        }
+
+        /* Typography Enhancements */
+        .subtitle {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            color: var(--gray);
+            font-weight: 300;
+            margin-bottom: 2rem;
+        }
+
+        .highlight {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        /* Additional Spacing Classes */
+        .mt-1 { margin-top: 0.5rem; }
+        .mt-2 { margin-top: 1rem; }
+        .mt-3 { margin-top: 1.5rem; }
+        .mt-4 { margin-top: 2rem; }
+        .mb-1 { margin-bottom: 0.5rem; }
+        .mb-2 { margin-bottom: 1rem; }
+        .mb-3 { margin-bottom: 1.5rem; }
+        .mb-4 { margin-bottom: 2rem; }
+
+        .text-center { text-align: center; }
+        .text-left { text-align: left; }
+        .text-right { text-align: right; }
+
+        /* Hero Video Background (optional) */
+        .hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.3;
+            z-index: -1;
+        }
+
+        /* Accent Color Variations */
+        .accent-text {
+            color: var(--accent);
+        }
+
+        .primary-text {
+            color: var(--primary);
+        }
+
+        /* Form Styles */
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        form input,
+        form textarea,
+        form select {
+            padding: 0.75rem;
+            margin-bottom: 1rem;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+        }
+
+        form textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        form button {
+            padding: 0.75rem;
+            background-color: var(--primary);
+            color: var(--white);
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            font-family: 'Inter', sans-serif;
+            transition: background-color 0.3s ease;
+        }
+
+        form button:hover {
+            background-color: var(--accent);
+            color: var(--primary);
+        }
+
+        /* Feature List */
+        .feature-list {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .feature-list li {
+            padding: 0.5rem 0;
+            padding-left: 2rem;
+            position: relative;
+            color: var(--gray);
+        }
+
+        .feature-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        /* Section Title Underline */
+        .section-title {
+            position: relative;
+            display: inline-block;
+            padding-bottom: 0.5rem;
+        }
+
+        .section-title:after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--accent);
+        }
+
+        /* Animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        /* Loading State */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(0, 0, 0, 0.1);
+            border-radius: 50%;
+            border-top-color: var(--primary);
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Success/Error Messages */
+        .alert {
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 4px;
+            border-left: 4px solid;
+        }
+
+        .alert-success {
+            background-color: #d4edda;
+            color: #155724;
+            border-color: #28a745;
+        }
+
+        .alert-error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border-color: #f5c6cb;
+        }
+
+        .alert-info {
+            background-color: #d1ecf1;
+            color: #0c5460;
+            border-color: #bee5eb;
+        }
+
+        /* Blog/Article Styles */
+        .article {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .article-meta {
+            color: var(--gray);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .article h1 {
+            font-family: 'EB Garamond', serif;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .article img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+
+        /* Navigation Breadcrumb */
+        .breadcrumb {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+        }
+
+        .breadcrumb a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .breadcrumb span {
+            color: var(--gray);
+        }
+
+        /* Table Styles */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+        }
+
+        th {
+            background-color: var(--light-bg);
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        td {
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        tr:hover {
+            background-color: var(--light-bg);
+        }
+
+        /* Print Styles */
+        @media print {
+            header, footer, .cta-button {
+                display: none;
+            }
+            body {
+                font-size: 12pt;
+            }
+        }
+
+        /* Accessibility */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+
+        /* Focus Styles for Keyboard Navigation */
+        a:focus, button:focus, input:focus, textarea:focus {
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="#" class="logo">Dr. Anthony Balduzzi</a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#" class="cta-button">Book Now</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Return to What Makes You Human</h1>
+            <p>In an age of acceleration, the deepest work is returning to what makes us human. Sacred, one-on-one mentorship for men ready to find their center.</p>
+            <a href="#contact" class="cta-button">Start Your Journey</a>
+            <a href="#" class="cta-button secondary">Learn More</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+        <div class="container">
+            <h2 class="section-title">About Dr. Anthony Balduzzi</h2>
+            <div class="about">
+                <div class="about-image">
+                    <img src="https://via.placeholder.com/400x400?text=Dr.+Anthony+Balduzzi" alt="Dr. Anthony Balduzzi">
+                </div>
+                <div>
+                    <p>Dr. Anthony Balduzzi is a naturopathic doctor, guide, and seeker dedicated to helping men return to a state of aliveness, strength, connection, and power from center. With years of experience in plant medicine, somatic practices, and sacred mentorship, Dr. Balduzzi offers a unique approach to men's health and personal transformation.</p>
+                    <p>His work combines ancient wisdom with modern science, creating personalized pathways for men to reconnect with their authentic selves, strengthen their bodies, deepen their relationships, and tap into their full potential.</p>
+                    <ul class="feature-list">
+                        <li>Naturopathic Doctor with years of clinical experience</li>
+                        <li>Expertise in plant medicine and herbal protocols</li>
+                        <li>Sacred mentorship and somatic coaching</li>
+                        <li>Holistic approach to men's health and wellness</li>
+                        <li>Featured in the Fit Father Project community</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section light-bg" id="services">
+        <div class="container">
+            <h2 class="section-title">Services & Offerings</h2>
+            <p class="subtitle">Tailored mentorship and healing practices for men seeking transformation</p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🧘</div>
+                    <h3>One-on-One Mentorship</h3>
+                    <p>Sacred, personalized guidance tailored to your unique journey. Work directly with Dr. Balduzzi to navigate life's deepest questions and unlock your potential.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🌿</div>
+                    <h3>Plant Medicine Guidance</h3>
+                    <p>Expert guidance on herbal protocols, supplements, and plant-based medicine to support your health, vitality, and transformation.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">💪</div>
+                    <h3>Somatic Coaching</h3>
+                    <p>Body-centered practices to release trauma, build strength, and reconnect with your embodied power. Transform how you inhabit your body.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">❤️</div>
+                    <h3>Relationship Coaching</h3>
+                    <p>Develop deeper connection with yourself and others. Learn to communicate authentically and build relationships rooted in presence and power.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🔥</div>
+                    <h3>Sacred Retreats</h3>
+                    <p>Immersive, transformative retreats combining mentorship, plant medicine, somatic work, and nature connection for deep personal evolution.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📚</div>
+                    <h3>Workshops & Groups</h3>
+                    <p>Interactive group experiences exploring men's health, transformation, and spiritual growth in a supportive community setting.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section" id="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Men Are Saying</h2>
+            <p class="subtitle">Real transformations from men who've worked with Dr. Balduzzi</p>
+            <div class="testimonials">
+                <div class="testimonial">
+                    <p>"Anthony's mentorship transformed my relationship with myself. His combination of ancient wisdom and modern science created a pathway I couldn't have found alone. I'm stronger, more connected, and living with true purpose."</p>
+                    <div class="testimonial-author">James M.</div>
+                    <div class="testimonial-role">Entrepreneur & Father</div>
+                </div>
+                <div class="testimonial">
+                    <p>"The plant medicine guidance and somatic work completely changed my approach to health. I went from burned out and disconnected to feeling alive and embodied. This work is real."</p>
+                    <div class="testimonial-author">Marcus T.</div>
+                    <div class="testimonial-role">Executive Coach</div>
+                </div>
+                <div class="testimonial">
+                    <p>"Working with Anthony helped me move from intellectual understanding to embodied wisdom. The sacred mentorship created space for genuine transformation that I didn't think was possible."</p>
+                    <div class="testimonial-author">David K.</div>
+                    <div class="testimonial-role">Author & Teacher</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section cta-section">
+        <div class="container">
+            <h2>Ready to Begin Your Transformation?</h2>
+            <p>Step into a mentorship that honors your deepest aspirations and guides you toward authentic power and connection.</p>
+            <a href="#contact" class="cta-button">Schedule Your Discovery Call</a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="subtitle">Ready to explore how sacred mentorship can transform your life?</p>
+            <div style="max-width: 500px; margin: 0 auto;">
+                <form id="contactForm">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <input type="tel" placeholder="Your Phone">
+                    <textarea placeholder="Tell me about your journey and what you're seeking..." required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+                <div id="formMessage" style="margin-top: 1rem;"></div>
+            </div>
+            <div style="margin-top: 3rem; text-align: center;">
+                <p><strong>Or reach out directly:</strong></p>
+                <p><a href="mailto:hello@anthonybalduzzi.com" style="color: var(--accent); text-decoration: none;">hello@anthonybalduzzi.com</a></p>
+                <p><a href="tel:+1-555-123-4567" style="color: var(--accent); text-decoration: none;">+1 (555) 123-4567</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-nav">
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#testimonials">Testimonials</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="social-links">
+                <a href="https://www.instagram.com" target="_blank">Instagram</a>
+                <a href="https://www.facebook.com" target="_blank">Facebook</a>
+                <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
+            </div>
+            <p>&copy; 2025 Dr. Anthony Balduzzi. All rights reserved.</p>
+            <p class="footer-credit">Crafted with intention and care for the journey of authentic transformation.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Form Submission Handler
+        const contactForm = document.getElementById('contactForm');
+        const formMessage = document.getElementById('formMessage');
+
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Simulate form submission (replace with actual backend call)
+                const formData = new FormData(contactForm);
+                
+                // Show success message
+                formMessage.innerHTML = '<div class="alert alert-success">Thank you for reaching out. I look forward to connecting with you soon.</div>';
+                contactForm.reset();
+                
+                // Clear message after 5 seconds
+                setTimeout(() => {
+                    formMessage.innerHTML = '';
+                }, 5000);
+            });
+        }
+
+        // Smooth Scrolling Enhancement (progressive enhancement)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#') {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
+        });
+
+        // Simple Gallery Lightbox
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        const lightbox = document.getElementById('lightbox');
+        
+        if (lightbox) {
+            galleryItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    const img = this.querySelector('img');
+                    const lightboxImg = lightbox.querySelector('img');
+                    lightboxImg.src = img.src;
+                    lightbox.classList.add('active');
+                });
+            });
+
+            const closeLightbox = () => {
+                lightbox.classList.remove('active');
+            };
+
+            document.querySelector('.lightbox-close')?.addEventListener('click', closeLightbox);
+            
+            lightbox.addEventListener('click', function(e) {
+                if (e.target === this && !lightbox.classList.contains('active')) closeLightbox();
+            });
+
+            // Close lightbox on Escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && lightbox.classList.contains('active')) closeLightbox();
+            });
+        }
+    </script>
+
+</body>
+</html>
